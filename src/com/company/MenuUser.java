@@ -15,7 +15,12 @@ public class MenuUser {
                 "5. Выйти из аккаунта.");
 
 
-        int choiceInMenuUser = sc.nextInt();
+        int choiceInMenuUser = OnlyNumber.playerInput();
+
+        if(choiceInMenuUser != 1 && choiceInMenuUser != 2 && choiceInMenuUser != 3 && choiceInMenuUser != 4 && choiceInMenuUser != 5){
+            System.out.println("Введён вариант, которого не существует. Повторите попытку.\n");
+            mu(login);
+        }
 
         if(choiceInMenuUser == 1){
             System.out.println("Введите имя и фамилию");

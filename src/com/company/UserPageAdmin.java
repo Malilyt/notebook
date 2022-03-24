@@ -15,7 +15,12 @@ public class UserPageAdmin {
                 "2. Узнать номер телефона.\n" +
                 "3. Удалить добавленый контакт.");
 
-        int choiceInMenu = sc.nextInt();
+        int choiceInMenu = OnlyNumber.playerInput();
+
+        if(choiceInMenu != 1 && choiceInMenu != 2 && choiceInMenu != 3){
+            System.out.println("Введён вариант, которого не существует. Повторите попытку.\n");
+            StartUserPage(login);
+        }
 
         if (choiceInMenu==1) {
             AddNumberPhone.Add(login);

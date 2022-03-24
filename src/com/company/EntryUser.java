@@ -37,7 +37,12 @@ public class EntryUser {
                         "1. Повторить попытку входа.\n"+
                         "2. Выйти в меню.");
 
-                int choice = sc.nextInt();
+                int choice = OnlyNumber.playerInput();
+
+                if(choice != 1 && choice != 2){
+                    System.out.println("Введён вариант, которого не существует. Повторите попытку.\n");
+                    entryUser();
+                }
 
                 if (choice == 1){
                     entryUser();
