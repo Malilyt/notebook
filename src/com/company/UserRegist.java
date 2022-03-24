@@ -1,7 +1,6 @@
 package com.company;
 
 import java.sql.SQLException;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class UserRegist {

@@ -25,7 +25,15 @@ public class MenuUser {
 
             DB db = new DB();
             try {
-                db.isExistsNumber(name+name2);
+
+                String return_number = db.isExistsNumber(name+name2);
+
+                if (return_number == null){
+                    System.out.println("Номер не найден.\n");
+                } else {
+                    System.out.println(return_number + "Номер телефона: \n");
+                }
+
 
 
             } catch (SQLException | ClassNotFoundException e) {

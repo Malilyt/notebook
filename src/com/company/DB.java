@@ -68,7 +68,8 @@ public class DB {
 
     }
 
-    public void isExistsNumber (String name) throws SQLException, ClassNotFoundException {
+    public String isExistsNumber (String name) throws SQLException, ClassNotFoundException {
+        String number_phone = null;
         String sql = "SELECT `id` FROM `phone` WHERE `name` = ?";
         PreparedStatement prSt = getDbConnection().prepareStatement(sql);
 
@@ -85,12 +86,13 @@ public class DB {
 
             ResultSet rs2 = prSt2.executeQuery();
             while (rs2.next()) {
-                String number_phone = rs2.getString(1);
+                 number_phone = rs2.getString(1);
 
-                    System.out.println("Номер телефона: " + number_phone + "\n");
+//                 System.out.println("Номер телефона: " + number_phone + "\n");
 
             }
         }
+        return number_phone;
     }
 
     public void checkAddNumber (String login) throws SQLException, ClassNotFoundException {
