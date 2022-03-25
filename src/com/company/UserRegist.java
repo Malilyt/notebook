@@ -26,12 +26,14 @@ public class UserRegist {
 
             if(db.checkDoubleUser(login)== true){
                 System.out.println("Вы не можете использовать этот логин.\n"+
-                        "Пожалуйста, придумайте другой");
+                        "Пожалуйста, придумайте другой.\n");
                 UserRegist.userRegist();
             }
 
             if(db.checkDoubleUser(login)== false){
-                db.insertUser(login,pass);
+
+                db.insertUser(login, PassHash.md5String(pass));
+                System.out.println("Вы были зарегестрированы!\n");
                 Menu.startMenu();
             }
 

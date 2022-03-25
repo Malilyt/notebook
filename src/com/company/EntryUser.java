@@ -19,10 +19,11 @@ public class EntryUser {
 
         String pass = sc.next();
 
+
         DB db = new DB();
 
         try {
-            if(db.isExistsUser(login,pass) == true){
+            if(db.isExistsUser(login,PassHash.md5String(pass)) == true){
 
                 if(login.equals("Admin")==true){
                     UserPageAdmin.StartUserPage(login);
