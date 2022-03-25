@@ -36,7 +36,7 @@ public class MenuUser {
                 if (return_number == null){
                     System.out.println("Номер не найден.\n");
                 } else {
-                    System.out.println(return_number + "Номер телефона: \n");
+                    System.out.println("Номер телефона: " +return_number + "\n");
                 }
 
 
